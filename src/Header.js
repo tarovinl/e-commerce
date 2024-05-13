@@ -12,7 +12,7 @@ function Header() {
       <nav>
         <div
           className={
-            " bg-smile-pink text-white p-4 flex justify-between items-center"
+            "bg-smile-pink text-white p-4 flex justify-between items-center relative"
           }
         >
           <div>
@@ -32,7 +32,29 @@ function Header() {
               />
             </svg>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center justify-center relative">
+            {/* Magnifying glass icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6 absolute left-3 top-1/2 transform -translate-y-1/2 text-white" // Adjusted position
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 15l-2-2m2 2l-2-2m2 2l2-2m-6 2a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+              />
+            </svg>
+            {/* Updated: Widened search bar with magnifying glass icon */}
+            <input
+              type="text"
+              placeholder="Search..."
+              className="pl-10 pr-4 py-1 rounded-full bg-transparent text-white placeholder-white::placeholder border border-white outline-none focus:ring focus:ring-blue-300"
+            />
+          </div>
+          <div className="flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -47,7 +69,6 @@ function Header() {
                 d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
               />
             </svg>
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
