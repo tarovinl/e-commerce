@@ -1,10 +1,13 @@
-import React from 'react'
+
 import ClientEmailVerifcationForm from './ClientEmailVerifcationForm'
 
-const ClientEmailVerification = ({verifyEmail}) => {
+
+const ClientEmailVerification = ({verifyEmail, setEmail, email}) => {
   return (
     <ClientEmailVerifcationForm 
-        verifyEmail = {verifyEmail}
+        email = {email}
+        setEmail = {setEmail}
+        verifyEmail={verifyEmail}
     />
   )
 }

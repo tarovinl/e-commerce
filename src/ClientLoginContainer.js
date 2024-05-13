@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import ClientLogin from "./ClientLogin";
 
 const ClientLoginContainer = ({
-  isLoggedIn,
   setIsLoggedIn,
   clientAccounts,
-  setClientAccounts
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
