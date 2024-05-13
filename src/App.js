@@ -7,6 +7,7 @@ import ClientSignUpContainer from "./ClientSignUpContainer.js";
 import Footer from "./Footer.js";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import ClientEmailVerificationContainer from "./ClientEmailVerificationContainer.js";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState("");
@@ -34,6 +35,27 @@ function App() {
     const newCusAccount = { id, firstname, lastname, email, password };
     const listClientAccounts = [...clientAccounts, newCusAccount];
     setAndSaveAccounts(listClientAccounts);
+  };
+
+  //Change Password
+  const editPassword = (email) => {
+    const updateClientAccounts = clientAccounts.map((account) => {
+      if (account.email === email) {
+        return { ...account, password: newPassword };
+      }
+      return account;
+    });
+  };
+  //Verify Email
+  const verifyEmail = (email) => {
+    const isEmailValid = clientAccounts.some(
+      (account) => account.email === email
+    );
+    if (isEmailValid) {
+      console.log("Email is Verified");
+    } else {
+      console.error("Invalid email for password change");
+    }
   };
 
   return (
@@ -72,6 +94,7 @@ function App() {
                         clientAccounts={clientAccounts}
                         setClientAccounts={setClientAccounts}
                       />{" "}
+                      <p>{""}<Link to = "email-verification">Forogt Password</Link></p>
                       <p>
                         Don't Have Account?{""}
                         <Link to="signup">Register Here!</Link>
@@ -84,7 +107,7 @@ function App() {
                   element={
                     <>
                       <ClientSignUpContainer
-                        addAccounts={addAccounts} // Use the correct function name
+                        addAccounts={addAccounts} 
                         newFirstName={newFirstName}
                         setNewFirstName={setNewFirstName}
                         newLastName={newLastName}
@@ -101,6 +124,16 @@ function App() {
                     </>
                   }
                 />{" "}
+                <Route
+                  path = "/email-verification"
+                  element={
+                    <>
+                    <ClientEmailVerificationContainer 
+                      verifyEmail = {verifyEmail}
+                    />{" "}
+                    </>
+                  }
+                ></Route>
               </Routes>
             </div>
           )}
