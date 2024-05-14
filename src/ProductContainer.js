@@ -1,4 +1,4 @@
-import Product from "./Product.js";
+import Item from "./Item.js";
 
 const productData = [
   {
@@ -24,7 +24,7 @@ export default function ProductContainer() {
         <ul className=" gap-3 columns-3   ">
           <li className="">
             {productData.map((product) => (
-              <Product productObj={product} />
+              <Item productObj={product} />
             ))}
           </li>
         </ul>
