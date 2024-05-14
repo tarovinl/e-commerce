@@ -4,15 +4,15 @@ function Header() {
   const currentHour = new Date().getHours();
   const isNightTime = currentHour >= 18 || currentHour <= 6;
 
-  const backgroundColor = isNightTime ? "bg-gray-800" : "bg-orange-100";
-  const textColor = isNightTime ? "text-white" : "text-black";
+  const backgroundColor = isNightTime ? "bg-black" : "bg-white"; // Adjusted background color
+  const textColor = isNightTime ? "text-white" : "text-black"; // Adjusted text color
 
   return (
     <header>
       <nav>
         <div
           className={
-            "bg-smile-pink text-white p-4 flex justify-between items-center relative"
+            `${backgroundColor} text-black p-4 flex justify-between items-center relative` // Changed background and text color classes
           }
         >
           <div>
@@ -33,13 +33,12 @@ function Header() {
             </svg>
           </div>
           <div className="flex items-center justify-center relative">
-            {/* Magnifying glass icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="w-6 h-6 absolute left-3 top-1/2 transform -translate-y-1/2 text-white" // Adjusted position
+              className="w-6 h-6 absolute left-3 top-1/2 transform -translate-y-1/2 text-black" // Adjusted text color
             >
               <path
                 strokeLinecap="round"
@@ -47,11 +46,11 @@ function Header() {
                 d="M15 15l-2-2m2 2l-2-2m2 2l2-2m-6 2a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
               />
             </svg>
-            {/* Updated: Widened search bar with magnifying glass icon */}
+
             <input
               type="text"
               placeholder="Search..."
-              className="pl-10 pr-4 py-1 rounded-full bg-transparent text-white placeholder-white::placeholder border border-white outline-none focus:ring focus:ring-blue-300"
+              className="pl-10 pr-4 py-1 bg-transparent text-black placeholder-black::placeholder border-b border-black outline-none focus:ring focus:ring-blue-300" // Removed border class
             />
           </div>
           <div className="flex items-center justify-center">
