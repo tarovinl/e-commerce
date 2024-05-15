@@ -1,43 +1,29 @@
 import React, { Fragment } from "react";
-import { Card } from "react-bootstrap";
-import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
-import "./ProductCard.css";
+
 function ProductCard({ product }) {
   return (
     <Fragment>
       <Link
         to={`/product/${product.id}`}
-        className="text-dark atext-decoration-none"
+        className="text-dark no-underline hover:text-gray-500 text-center font-futurabook"
       >
-        <Card className="custom-card">
-          <Card.Img
-            variant="top"
-            className="py-3 card-img"
+        <div className="bg-white max-w-sm mx-auto p-4">
+          <img
+            className="w-full h-96 object-cover mb-4"
             src={product.image}
+            alt={product.title}
           />
-          <Card.Body className="text-center">
-            <Card.Title className="fs-6">
-              {product.title.slice(0, 30)} ...
-            </Card.Title>
-            <Card.Text className="text-capitalize text-decoration-none fs-6">
-              {product.category}
-            </Card.Text>
-            <h5>${product.price}</h5>
-            <div className="py-2 d-flex justify-content-center fs-6">
-              <ReactStars
-                count={5}
-                value={product.rating.rate}
-                isHalf={true}
-                emptyIcon={<i className="far fa-start"></i>}
-                halfIcon={<i className="fa fa-star-half-alt"></i>}
-                fullIcon={<i className="fa fa-star"></i>}
-                activeColor="#ffd700"
-              ></ReactStars>
-              {`(${product.rating.count})`}
-            </div>
-          </Card.Body>
-        </Card>
+          <span className="text-gray-600 text-xs capitalize block my-2">
+            {product.category}
+          </span>
+          <div className="text-center flex flex-col items-center justify-center">
+            <p className="font-semibold text-sm mb-0">
+              {product.title.slice(0, 30)}...
+            </p>
+            <h5 className="text-sm mt-2">${product.price}</h5>
+          </div>
+        </div>
       </Link>
     </Fragment>
   );
