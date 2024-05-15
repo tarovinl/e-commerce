@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCategories } from "../../features/category/CategorySlice";
 import { setSearchQuery } from "../../features/product/ProductSlice";
+import debounce from "lodash.debounce";
 
 const TopNavbar = () => {
   const dispatch = useDispatch();
@@ -10,6 +11,8 @@ const TopNavbar = () => {
   const navigate = useNavigate();
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [searchQuery, setSearchQueryState] = useState("");
+
+  const { products } = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(fetchAllCategories());
@@ -20,17 +23,28 @@ const TopNavbar = () => {
       setShowSearchBar(true);
     } else {
       setShowSearchBar(false);
+      // Clear search query when navigating away from the Shop page
+      dispatch(setSearchQuery(""));
     }
-  }, [location]);
+  }, [location, dispatch]);
 
   const handleSearchChange = (e) => {
     setSearchQueryState(e.target.value);
+    debouncedSearch(e.target.value);
   };
+
+  const debouncedSearch = useCallback(
+    debounce((query) => {
+      dispatch(setSearchQuery(query));
+      navigate("/products");
+    }, 300),
+    []
+  );
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     dispatch(setSearchQuery(searchQuery));
-    navigate(`/products`);
+    navigate("/products");
   };
 
   return (
@@ -40,7 +54,7 @@ const TopNavbar = () => {
           to="/"
           className="text-xl font-bold text-gray-900 no-underline"
         >
-          <img src="./kopalogo.png" alt="Kopa Logo" className="h-12" />
+          <img src="/kopalogo.png" alt="Kopa Logo" className="h-12" />
         </NavLink>
         <div className="md:hidden">
           <button className="focus:outline-none focus:shadow-outline">
