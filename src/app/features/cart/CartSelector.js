@@ -2,6 +2,8 @@ import { createSelector } from "@reduxjs/toolkit";
 
 export const cartsItem = (state) => state.carts.carts;
 
+//conversion rate US to PHP
+const conversionRate = 55;
 //count total cart prouduct quantity
 export const totalCartItem = createSelector(cartsItem, (items) => {
   //items.reduce((totalQuantity, item) => totalQuantity + item.quantity, 0);
@@ -18,7 +20,8 @@ export const subTotalPrice = createSelector(cartsItem, (items) => {
   if (items) {
     items.map((i) => (total += i.price * i.quantity));
   }
-  return total.toFixed(2);
+  const totalInPHP = total * conversionRate;
+  return totalInPHP.toFixed(2);
 });
 //calculate tax to purchase item
 //if the purchase ammount is 300$ or more then include 2% tax

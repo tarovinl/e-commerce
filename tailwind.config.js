@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        futurabook: ["FUTURABOOK", "serif"],
+        futura: ["Futura", "serif"],
       },
       animation: {
         marquee: "marquee 30s linear infinite",

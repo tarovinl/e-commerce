@@ -9,6 +9,7 @@ import {
   decreaseQuantity,
   removeFormCart,
 } from "../../features/cart/CartSlice";
+import { PiMinus, PiPlus } from "react-icons/pi";
 
 function CartItemCard({ item }) {
   //set the product info to state
@@ -32,6 +33,10 @@ function CartItemCard({ item }) {
     e.preventDefault();
     dispatch(removeFormCart(item));
   };
+  //button styling
+  const style = { color: "black", fontSize: "1.5em" };
+  //exchange rate
+  const exchangeRate = 55;
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${item.id}`).then((res) => {
       setProduct({ ...res.data, quantity: item.quantity });
@@ -40,44 +45,65 @@ function CartItemCard({ item }) {
   let content = "";
   if (product) {
     return (content = (
-      <Card className="my-2">
+      <Card className="border-0">
         <Card.Body>
-          <div className="d-flex justify-content-between">
-            <div className="w-100">
-              <Link
-                to={`/product/${product.id}`}
-                className="text-dark text-decoration-none fs-5"
-              >
-                {product.title ? product.title.slice(0, 20) : ""}...
-              </Link>
-            </div>
-            <div className="d-flex w-100 justify-content-center">
-              <button
-                className="btn btn-sm btn-dark fs-6 me-3 text-center"
-                onClick={decreaseItemQunaity}
-              >
-                <FaMinus />
-              </button>
-              <span className="fs-4">{product.quantity}</span>
-              <button
-                className="btn btn-sm btn-dark fs-6 ms-3 text-center"
-                onClick={increaseItemQuantity}
-              >
-                <FaPlus />
-              </button>
-            </div>
-            <div className="w-100 text-center">
-              <span className="fs-5">
-                $
-                {product.price
-                  ? (product.price * product.quantity).toFixed(2)
-                  : ""}
-              </span>
-            </div>
-            <div className="w-100 text-center">
-              <Button variant="danger" onClick={removeItem}>
-                Remove
-              </Button>
+          <div className="flex justify-around">
+            <div className="flex w-3/4 m-0 justify-between">
+              <div className="flex gap-12">
+                <div className="flex">
+                  <Link
+                    to={`/product/${product.id}`}
+                    className="text-dark text-decoration-none fs-5"
+                  >
+                    <img
+                      className="w-48 h-64 shadow-md m-2 rounded-md p-0.5"
+                      src={product.image}
+                      alt={product.title}
+                    />
+                  </Link>
+                </div>
+                <div className="grid gap-y-20 ">
+                  <div className="flex items-start text-justify font-futura text-xl w-48">
+                    {product.title ? product.title.slice(0, 20) : ""}...
+                  </div>
+                  <div className="flex justify-start h-10">
+                    <button
+                      className="btn btn-sm font-thin me-3 text-center"
+                      onClick={decreaseItemQunaity}
+                    >
+                      <PiMinus style={style} />
+                    </button>
+                    <span className="flex text-2xl items-center font-futura">
+                      {product.quantity}
+                    </span>
+                    <button
+                      className="btn btn-sm ms-3 text-center"
+                      onClick={increaseItemQuantity}
+                    >
+                      <PiPlus style={style} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="grid gap-y-20 text-center w-52">
+                <span className="flex fs-5 font-futura justify-end gap-x-1">
+                  <span>₱ </span>
+                  <span>
+                    {product.price
+                      ? (
+                          product.price *
+                          product.quantity *
+                          exchangeRate
+                        ).toFixed(2)
+                      : ""}
+                  </span>
+                </span>
+                <div className="flex w-100 text-center font-futura justify-end">
+                  <button className="text-xl underline" onClick={removeItem}>
+                    Remove
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </Card.Body>
