@@ -27,10 +27,10 @@ function Cart() {
           {!carts.length && (
             <div className="w-100 my-5 text-center text-danger">
               <h3>
-                You don't have any product in carts.{" "}
+                Your cart is lonely.{" "}
                 <Link to="/products" className="text-dark text-decoration-none">
                   {" "}
-                  Go for shoping{" "}
+                  Go for shopping{" "}
                 </Link>
               </h3>
             </div>
