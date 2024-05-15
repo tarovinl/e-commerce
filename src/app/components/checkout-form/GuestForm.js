@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import TopNavbar from "../header/TopNavbar";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { MdCheckBox } from "react-icons/md";
 
 function GuestForm() {
   return (
@@ -14,7 +13,10 @@ function GuestForm() {
         next step to make your future purchases even faster.
       </p>
       <input type="text" placeholder="email" className="border-1" />
-      <MdCheckBox /> By continuing, you accept our Privacy Policy
+      <label>
+        <input type="checkbox" />
+        My Value
+      </label>
       <Link to="/completeform">
         <Button>Continue order</Button>
       </Link>
