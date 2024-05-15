@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      fontFamily: {
+        futurabook: ["FUTURABOOK", "serif"],
+      },
       animation: {
         marquee: "marquee 30s linear infinite",
         marquee2: "marquee2 30s linear infinite",
@@ -29,6 +32,7 @@ module.exports = {
       },
       colors: {
         "smile-pink": "#f376ac",
+        "custom-black": "#2e2e2e",
       },
     },
   },
