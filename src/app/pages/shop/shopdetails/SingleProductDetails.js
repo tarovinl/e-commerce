@@ -116,7 +116,7 @@ function SingleProductDetails() {
                   </svg>
                   Add to Basket
                   <h4 className="text-white text-xl ml-28 mt-2">
-                    $ {product.price}
+                    ${product.price}
                   </h4>
                 </button>
               </div>
