@@ -3,6 +3,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCategories } from "../../features/category/CategorySlice";
 import { setSearchQuery } from "../../features/product/ProductSlice";
+import { totalCartItem } from "../../features/cart/CartSelector";
 import debounce from "lodash.debounce";
 
 const TopNavbar = () => {
@@ -11,6 +12,8 @@ const TopNavbar = () => {
   const navigate = useNavigate();
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [searchQuery, setSearchQueryState] = useState("");
+  let state = useSelector((state) => state);
+  let totalItems = totalCartItem(state);
 
   const { products } = useSelector((state) => state.products);
 
@@ -47,6 +50,12 @@ const TopNavbar = () => {
     navigate("/products");
   };
 
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown((prev) => !prev);
+  };
+
   return (
     <nav className="bg-white sticky top-0 z-50">
       <div className="container mx-auto px-6 py-3 flex items-center justify-between">
@@ -68,6 +77,7 @@ const TopNavbar = () => {
             </svg>
           </button>
         </div>
+
         {showSearchBar && (
           <form className="flex-1 mx-4" onSubmit={handleSearchSubmit}>
             <div className="relative">
@@ -100,7 +110,10 @@ const TopNavbar = () => {
               to="/cart"
               className="text-gray-700 hover:text-gray-900 no-underline font-futurabook"
             >
-              Cart
+              Cart{" "}
+              {totalItems > 0 && (
+                <span style={{ color: "red" }}>({totalItems})</span>
+              )}
             </NavLink>
           </div>
         </div>
