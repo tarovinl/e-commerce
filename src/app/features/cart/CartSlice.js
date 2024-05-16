@@ -1,5 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
+export const selectCart = (state) => state.cart;
 
+// Select the cart items and calculate their total quantity
+export const selectCartItemsCount = createSelector([selectCart], (cart) =>
+  cart.carts.reduce(
+    (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity,
+    0
+  )
+);
 const CartSlice = createSlice({
   name: "cart",
   initialState: {
@@ -9,6 +17,10 @@ const CartSlice = createSlice({
     error: null,
   },
   reducers: {
+    resetCart: (state) => {
+      state.carts = [];
+      localStorage.setItem("carts", JSON.stringify([]));
+    },
     addToCarts: (state, action) => {
       //check carts not empty or exist
       if (!state.carts) {
@@ -106,6 +118,7 @@ export const cartState = (state) => state.carts;
 
 //export reducer
 export const {
+  resetCart,
   addToCarts,
   increaseQuantity,
   decreaseQuantity,

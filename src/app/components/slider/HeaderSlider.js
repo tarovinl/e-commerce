@@ -1,5 +1,6 @@
 import { Carousel, Button } from "react-bootstrap";
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const HeaderSlider = () => {
   return (
@@ -16,7 +17,9 @@ const HeaderSlider = () => {
             <h5>Lagyan nyo to ng caption hehehe</h5>
             <p>tapos konting description pa</p>
             <div className="mb-3">
-              <Button variant="light">Shop Now</Button>
+              <Link to="/products" element>
+                <Button variant="light">Shop Now</Button>
+              </Link>
             </div>
           </Carousel.Caption>
         </Carousel.Item>

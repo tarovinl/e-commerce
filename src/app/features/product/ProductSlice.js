@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { axiosErrorHandler } from "../../utils/axiosErrorHandler";
 
-//fetch all proudcts from the api end point
+// fetch all products from the API endpoint
 export const getAllProducts = createAsyncThunk(
   "products/fetchAllProducts",
   async () => {
@@ -14,9 +14,20 @@ export const getAllProducts = createAsyncThunk(
     }
   }
 );
+
 const productSlice = createSlice({
   name: "products",
-  initialState: { isLoading: false, products: [], error: null },
+  initialState: {
+    isLoading: false,
+    products: [],
+    error: null,
+    searchQuery: "",
+  },
+  reducers: {
+    setSearchQuery(state, action) {
+      state.searchQuery = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getAllProducts.pending, (state, action) => {
       state.isLoading = true;
@@ -34,5 +45,7 @@ const productSlice = createSlice({
     });
   },
 });
+
+export const { setSearchQuery } = productSlice.actions;
 
 export default productSlice.reducer;
