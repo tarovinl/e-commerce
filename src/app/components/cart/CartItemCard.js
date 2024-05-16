@@ -48,7 +48,7 @@ function CartItemCard({ item }) {
                 to={`/product/${product.id}`}
                 className="text-dark text-decoration-none fs-5"
               >
-                {product.title ? product.title.slice(0, 20) : ""}...
+                {product.title ? product.title.slice(0, 170) : ""}
               </Link>
               <div className="p-3">
                 <img
