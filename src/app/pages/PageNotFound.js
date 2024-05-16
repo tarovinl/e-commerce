@@ -12,7 +12,7 @@ function PageNotFound() {
         <div className="m-auto w-100 text-center my-5">
           <h1 className="text-danger">Page Not Found</h1>
           <Link to="/" className="text-dark text-decoration-none fs-5">
-            Go back to Home Page
+            Go back to Homepage
           </Link>
         </div>
       </Container>

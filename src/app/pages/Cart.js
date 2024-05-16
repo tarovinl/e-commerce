@@ -25,12 +25,14 @@ function Cart() {
       <Container>
         <Row>
           {!carts.length && (
-            <div className="w-100 my-5 text-center text-danger">
+            <div className="w-100 my-5 text-center ">
               <h3>
-                You don't have any product in carts.{" "}
-                <Link to="/products" className="text-dark text-decoration-none">
-                  {" "}
-                  Go for shoping{" "}
+                Your cart is lonely. Go for{" "}
+                <Link
+                  to="/products"
+                  className="text-danger text-decoration-none"
+                >
+                  shopping!{" "}
                 </Link>
               </h3>
             </div>
@@ -64,9 +66,11 @@ function Cart() {
                     </h5>
                   </div>
                   <div className="w-100 text-center">
-                    <Button variant="dark" className="align-middle d-inline">
-                      Checkout
-                    </Button>
+                    <Link to="/guestform" className="text-decoration-none">
+                      <Button variant="dark" className="align-middle d-inline">
+                        Checkout
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </Card.Body>
