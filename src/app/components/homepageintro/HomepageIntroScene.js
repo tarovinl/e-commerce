@@ -24,7 +24,7 @@ const HomepageIntroScene = () => {
         className=" w-full md:w-[800px] h-auto object-cover"
       />
 
-      <h1 className=" absolute top-[700px] left-32 font-futurabook text-white px-4 py-2  text-2xl md:text-xl lg:text-lg xl:text-2xl">
+      <h1 className=" absolute top-[770px] left-[1120px] font-futurabook text-white px-4 py-2  text-2xl md:text-xl lg:text-lg xl:text-2xl">
         La serviette Rayures
       </h1>
     </div>
