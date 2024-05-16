@@ -50,6 +50,13 @@ function CartItemCard({ item }) {
               >
                 {product.title ? product.title.slice(0, 20) : ""}...
               </Link>
+              <div className="p-3">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-3/4 h-full  rounded-lg"
+                />
+              </div>
             </div>
             <div className="d-flex w-100 justify-content-center">
               <button

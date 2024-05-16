@@ -19,7 +19,7 @@ function ProductCard({ product }) {
           </span>
           <div className="text-center flex flex-col items-center justify-center">
             <p className="font-semibold text-sm mb-0">
-              {product.title.slice(0, 30)}...
+              {product.title.slice(0, 170)}
             </p>
             <h5 className="text-sm mt-2">${product.price}</h5>
           </div>
