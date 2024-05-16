@@ -5,7 +5,7 @@ function Footer() {
   return (
     <Fragment>
       <RightCartIcon />
-      <div className="text-center bg-dark text-white py-2 fixed-bottom">
+      <div className="text-center bg-dark text-white py-2 ">
         <span>Copyright & Developed by KarlyCakes</span>
       </div>
     </Fragment>
