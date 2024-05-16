@@ -60,14 +60,14 @@ function CartItemCard({ item }) {
             </div>
             <div className="d-flex w-100 justify-content-center">
               <button
-                className="btn btn-sm btn-dark fs-6 me-3 text-center"
+                className="btn btn-sm btn-dark h-8 fs-6 me-3 text-center"
                 onClick={decreaseItemQunaity}
               >
                 <FaMinus />
               </button>
               <span className="fs-4">{product.quantity}</span>
               <button
-                className="btn btn-sm btn-dark fs-6 ms-3 text-center"
+                className="btn btn-sm btn-dark h-8 fs-6 ms-3 text-center"
                 onClick={increaseItemQuantity}
               >
                 <FaPlus />
