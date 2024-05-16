@@ -23,10 +23,10 @@ const HomepageIntroScene = () => {
       <img
         src="/bgimage1.png"
         alt="Bg"
-        className=" w-full md:w-[800px] h-auto object-cover"
+        className=" w-full md:w-[600px] h-auto object-cover"
       />
 
-      <h1 className=" absolute top-[500px] left-[900px] font-futurabook text-white px-4 py-2  text-2xl md:text-xl lg:text-lg xl:text-2xl">
+      <h1 className=" absolute top-[550px] left-[920px] font-futurabook text-white px-4 py-2  text-2xl md:text-xl lg:text-lg xl:text-2xl">
         La serviette Rayures
       </h1>
     </div>
