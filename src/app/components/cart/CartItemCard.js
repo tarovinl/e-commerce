@@ -23,7 +23,7 @@ function CartItemCard({ item }) {
     dispatch(increaseQuantity(item));
   };
   //decrease the item quantity
-  const decreaseItemQunaity = (e) => {
+  const decreaseItemQuantity = (e) => {
     e.preventDefault();
     dispatch(decreaseQuantity(item));
   };
@@ -40,55 +40,63 @@ function CartItemCard({ item }) {
   let content = "";
   if (product) {
     return (content = (
-      <Card className="my-2">
-        <Card.Body>
-          <div className="d-flex justify-content-between">
-            <div className="w-100">
+      <div className="d-flex justify-content-between font-futurabook">
+        <div className="w-100 flex justify-between ">
+          <div className="p-3">
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-3/4 h-full  rounded-lg"
+            />
+          </div>
+          <div className="">
+            <div className="flex justify-between ">
               <Link
                 to={`/product/${product.id}`}
                 className="text-dark text-decoration-none fs-5"
               >
                 {product.title ? product.title.slice(0, 170) : ""}
               </Link>
-              <div className="p-3">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-3/4 h-full  rounded-lg"
-                />
+
+              <div className="w-100 text-center">
+                <span className="fs-5">
+                  $
+                  {product.price
+                    ? (product.price * product.quantity).toFixed(2)
+                    : ""}
+                </span>
               </div>
             </div>
-            <div className="d-flex w-100 justify-content-center">
-              <button
-                className="btn btn-sm btn-dark h-8 fs-6 me-3 text-center"
-                onClick={decreaseItemQunaity}
-              >
-                <FaMinus />
-              </button>
-              <span className="fs-4">{product.quantity}</span>
-              <button
-                className="btn btn-sm btn-dark h-8 fs-6 ms-3 text-center"
-                onClick={increaseItemQuantity}
-              >
-                <FaPlus />
-              </button>
-            </div>
-            <div className="w-100 text-center">
-              <span className="fs-5">
-                $
-                {product.price
-                  ? (product.price * product.quantity).toFixed(2)
-                  : ""}
-              </span>
-            </div>
-            <div className="w-100 text-center">
-              <Button variant="danger" onClick={removeItem}>
-                Remove
-              </Button>
-            </div>
           </div>
-        </Card.Body>
-      </Card>
+          <div className="d-flex w-100 h-8 justify-content-center">
+            <button
+              className=" text-black px-2 py-1 mr-2 "
+              onClick={decreaseItemQuantity}
+            >
+              <FaMinus />
+            </button>
+            <span className="text-center w-16 p-1 m-0 ">
+              {product.quantity}
+            </span>
+            <button
+              className="text-black px-2 py-1 ml-2 rounded "
+              onClick={increaseItemQuantity}
+            >
+              <FaPlus />
+            </button>
+          </div>
+
+          <div className="w-100 text-center">
+            <Button
+              variant=""
+              onClick={removeItem}
+              className="bg-transparent text-black"
+            >
+              Remove
+            </Button>
+          </div>
+        </div>
+      </div>
     ));
   }
   return { content };

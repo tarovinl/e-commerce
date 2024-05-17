@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItemCard from "../components/cart/CartItemCard";
@@ -50,19 +50,19 @@ function Cart() {
         {carts.length > 0 && (
           <div className="my-3 border-t-2 border-[#a6a6a6]">
             <div className="flex flex-col font-futurabook mt-2 space-y-0 ">
-              <div className="flex justify-between items-start">
+              <div className="flex justify-between ">
                 <h5 className="text-lg">Subtotal</h5>
                 <h5 className="text-lg">${subTotal}</h5>
               </div>
-              <div className="flex justify-between items-start">
+              <div className="flex justify-between ">
                 <h5 className="text-lg">Tax (2%)</h5>
                 <h5 className="text-lg">${tax}</h5>
               </div>
-              <div className="flex justify-between items-start">
+              <div className="flex justify-between ">
                 <h5 className="text-lg">Shipping</h5>
                 <h5 className="text-lg">Free</h5>
               </div>
-              <div className="flex  justify-between items-start mt-2 mb-4 ">
+              <div className="flex  justify-between  mt-2 mb-4 ">
                 <h5 className="text-2xl font-bold">Total:</h5>
                 <h5 className="text-2xl font-bold">
                   ${totalAmount.toFixed(2)}
