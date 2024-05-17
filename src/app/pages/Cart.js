@@ -25,7 +25,7 @@ function Cart() {
       <Container>
         <Row>
           {!carts.length && (
-            <div className="w-100 my-5 text-center ">
+            <div className="w-100 py-48 text-center ">
               <h3>
                 Your cart is lonely. Go for{" "}
                 <Link

@@ -6,15 +6,17 @@ function ProductCard({ product }) {
     <Fragment>
       <Link
         to={`/product/${product.id}`}
-        className="text-dark no-underline hover:text-gray-500 text-center font-futurabook"
+        className="text-dark no-underline  hover:text-gray-500 text-center font-futurabook"
       >
-        <div className="bg-white max-w-sm mx-auto p-4 w-full relative group">
-          <div className="relative overflow-hidden">
+        <div className="bg-white max-w-sm mx-auto p-4 w-full relative group ">
+          <div className="relative flex flex-wrap justify-around h-96">
             <img
-              className="w-full h-96 object-cover mb-4 transition-transform duration-300 group-hover:scale-105 group-hover:opacity-70"
+              className="w-full h-full object-contain mb-4 transition-transform duration-300 group-hover:scale-105 group-hover:opacity-70"
               src={product.image}
               alt={product.title}
             />
+            {/* Repeat for other products */}
+
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
