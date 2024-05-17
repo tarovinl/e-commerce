@@ -21,6 +21,8 @@ function CompleteForm() {
     dispatch(resetCart()); // Dispatch the resetCart action
   };
 
+  const inputClass =
+    "mb-6 bg-white border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-500 ";
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -41,104 +43,116 @@ function CompleteForm() {
 
   return (
     <Fragment>
-      <h1>Complete form</h1>
-      <div>
-        <p>
-          For customs purposes, you must enter the following details in latin
-          characters.
-        </p>
-        <form ref={form} onSubmit={sendEmail}>
-          <input
-            type="text"
-            id="name"
-            placeholder="Name*"
-            name="from_name"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <input
-            type="text"
-            id="name"
-            placeholder="Surname*"
-            name="from_surname"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <input
-            type="email"
-            id="email"
-            name="from_email"
-            //value = {}
-            required
-          />
-          <input
-            type="text"
-            id="country"
-            placeholder="Country*"
-            from="from_country"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <input
-            type="text"
-            id="address"
-            placeholder="Address*"
-            name="from_address"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <input
-            type="text"
-            id="address-2"
-            placeholder="Address (line 2)*"
-            name="from_address-2"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <input
-            type="text"
-            id="post-code"
-            placeholder="Post code*"
-            name="from_post-code"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <input
-            type="text"
-            id="region"
-            placeholder="Region*"
-            name="from_region"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <input
-            type="text"
-            id="town"
-            placeholder="Town / City*"
-            name="from_city"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <input
-            type="tel"
-            id="phone"
-            placeholder="Phone Number (09**-***-****)*"
-            pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
-            name="from_phone_number"
-            //value = {}
-            //onChange = {}
-            required
-          />
-          <button type="submit">Continue order</button>
-        </form>
+      <div className="h-full w-1/2 justify-center items-center flex flex-col mx-auto my-auto px-3 py-3">
+        <div className="flex flex-col justify-center text-center">
+          <p className="text-slate-400">
+            For customs purposes, you must enter the following details in latin
+            characters.
+          </p>
+          <form ref={form} onSubmit={sendEmail}>
+            <input
+              className={inputClass}
+              type="text"
+              id="name"
+              placeholder="Name*"
+              name="from_name"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="text"
+              id="name"
+              placeholder="Surname*"
+              name="from_surname"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="email"
+              id="email"
+              name="from_email"
+              placeholder="Email*"
+              //value = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="text"
+              id="country"
+              placeholder="Country*"
+              from="from_country"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="text"
+              id="address"
+              placeholder="Address*"
+              name="from_address"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="text"
+              id="address-2"
+              placeholder="Address (line 2)*"
+              name="from_address-2"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="text"
+              id="post-code"
+              placeholder="Post code*"
+              name="from_post-code"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="text"
+              id="region"
+              placeholder="Region*"
+              name="from_region"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="text"
+              id="town"
+              placeholder="Town / City*"
+              name="from_city"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <input
+              className={inputClass}
+              type="tel"
+              id="phone"
+              placeholder="Phone Number (0912-345-6789)*"
+              pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
+              name="from_phone_number"
+              //value = {}
+              //onChange = {}
+              required
+            />
+            <button type="submit" className="w-full text-white text-center bg-black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Continue order</button>
+          </form>
+        </div>
       </div>
 
       <Modal show={showModal} onHide={handleCloseModal}>

@@ -31,53 +31,51 @@ function GuestForm() {
   return (
     <Fragment>
       <TopNavbar />
-      <div className=" container mx-auto flex flex-col sm:max-w-80">
-        <h3 class="text-gray-700 text-2xl">Continue as guest</h3>
-        <p class="text-gray-700">
+      <div className="h-auto w-1/3 flex flex-col mt-16 mx-auto items-center">
+        <h3 class="text-gray-700 text-4xl w-full">Continue as guest</h3>
+
+        <p class=" text-gray-700 text-lg mt-12">
           Complete your order without an account. You can save your details on
           the next step to make your future purchases even faster.
         </p>
-
-        <form onSubmit={handleSubmit}>
-          <div className="flex flex-col">
-            <div className="w-9/12 mb-4">
+        <div className="w-full my-6" >
+          <form onSubmit={handleSubmit}>
             <input
-              class="w-full border-2 border-black rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              class="w-full border-2 border-black rounded-lg px-3 py-3 my-3 focus:outline-none focus:ring-1 focus:ring-blue-500"
               type="email"
               placeholder="email"
               required
             />
-            </div>
-          </div>
-          <div className="flex item-center">
-            <input type="checkbox" onChange={handleAgreementChange} />
 
-            <label class="text-gray-700">
-              I have read and agree to{" "}
-              <a
-                class="decoration-blue-900 no-underline hover:cursor-pointer"
-                onClick={handleTermsModal}
+            <div className="flex justify-center">
+              <input type="checkbox" className="mr-3 px-3" onChange={handleAgreementChange} />
+              <label class="text-gray-700">
+                I have read and agree to{" "}
+                <a
+                  class="decoration-blue-900 no-underline hover:cursor-pointer"
+                  onClick={handleTermsModal}
+                >
+                  Terms of Service
+                </a>{" "}
+                and{" "}
+                <a
+                  class="decoration-blue-900 no-underline hover:cursor-pointer"
+                  onClick={handlePrivacyModal}
+                >
+                  Privacy Policy
+                </a>{" "}
+              </label>
+            </div>
+            <div className="flex justify-content">
+              <button
+                class="w-full text-white text-center bg-black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-6 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                type="submit"
               >
-                Terms of Service
-              </a>{" "}
-              and{" "}
-              <a
-                class="decoration-blue-900 no-underline hover:cursor-pointer"
-                onClick={handlePrivacyModal}
-              >
-                Privacy Policy
-              </a>{" "}
-            </label>
-          </div>
-          <div>
-            <button
-              class="text-white bg-black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-              type="submit"
-            >
-              Continue order
-            </button>
-          </div>
-        </form>
+                Continue order
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
       <Modal show={showTermsModal} onHide={handleCloseTermsModal}>
         <Modal.Header closeButton>
