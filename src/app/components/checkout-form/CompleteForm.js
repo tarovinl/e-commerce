@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../features/cart/CartSlice";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+
 import emailjs from "@emailjs/browser";
 
 function CompleteForm() {
   const form = useRef();
-  const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
