@@ -62,12 +62,19 @@ function Cart() {
                 <h5 className="text-lg">Shipping</h5>
                 <h5 className="text-lg">Free</h5>
               </div>
-              <div className="flex  justify-between items-start mt-2 ">
+              <div className="flex  justify-between items-start mt-2 mb-4 ">
                 <h5 className="text-2xl font-bold">Total:</h5>
                 <h5 className="text-2xl font-bold">
                   ${totalAmount.toFixed(2)}
                 </h5>
               </div>
+            </div>
+            <div className="text-center text-2xl font-futurabook">
+              <Link to="/guestform" className="text-decoration-none">
+                <button className="inline-block w-full h-16 text-center text-2xl bg-custom-black text-white">
+                  Checkout
+                </button>
+              </Link>
             </div>
           </div>
         )}
