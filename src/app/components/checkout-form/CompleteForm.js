@@ -43,7 +43,7 @@ function CompleteForm() {
 
   return (
     <Fragment>
-      <div className="h-full w-1/2 justify-center items-center flex flex-col mx-auto my-auto px-3 py-3">
+      <div className="h-full w-2/3 justify-center items-center flex flex-col mx-auto my-auto px-3 py-3 lg:w-1/2">
         <div className="flex flex-col justify-center text-center">
           <p className="text-slate-400">
             For customs purposes, you must enter the following details in latin

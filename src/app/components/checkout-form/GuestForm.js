@@ -31,10 +31,10 @@ function GuestForm() {
   return (
     <Fragment>
       <TopNavbar />
-      <div className="h-auto w-1/3 flex flex-col mt-16 mx-auto items-center">
-        <h3 class="text-gray-700 text-4xl w-full">Continue as guest</h3>
+      <div className="h-auto w-2/3 flex flex-col mt-16 mx-auto items-center lg:w-1/3">
+        <h3 class="text-gray-700 text-2xl w-full md:text-3xl lg:text-4xl">Continue as guest</h3>
 
-        <p class=" text-gray-700 text-lg mt-12">
+        <p class=" text-gray-700 text-base lg:text-lg mt-12">
           Complete your order without an account. You can save your details on
           the next step to make your future purchases even faster.
         </p>
