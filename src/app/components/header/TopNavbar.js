@@ -126,14 +126,14 @@ const TopNavbar = () => {
           </NavLink>
           <NavLink
             to="/cart"
-            className="block px-4 py-2 group flex  text-custom-black hover:bg-gray-100 no-underline font-futurabook"
+            className="flex px-4 py-2 group  text-custom-black hover:bg-gray-100 no-underline font-futurabook"
             onClick={() => setIsMenuOpen(false)}
           >
             <p className="text-lg  relative mt-2 w-max">
               <span>Cart</span>
               <span
                 className={`absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black ${
-                  location.pathname === "/products"
+                  location.pathname === "/cart"
                     ? "w-full"
                     : "group-hover:w-full"
                 }`}
