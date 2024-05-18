@@ -39,6 +39,7 @@ module.exports = {
         "smile-pink": "#f376ac",
         "custom-black": "#2e2e2e",
         "custom-white": "#ffffff",
+        "custom-red": "#FF6D6D",
       },
     },
   },

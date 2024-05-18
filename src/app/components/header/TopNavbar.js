@@ -75,7 +75,7 @@ const TopNavbar = () => {
                 <span>
                   Cart{" "}
                   {totalItems > 0 && (
-                    <span class="inline-block rounded-full bg-custom-black text-white text-xs px-1 py-1">
+                    <span class="inline-block rounded-full bg-custom-red text-white text-xs px-1 py-1">
                       {totalItems}
                     </span>
                   )}

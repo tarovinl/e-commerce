@@ -73,7 +73,14 @@ function Cart() {
             </div>
             <div className="text-center text-2xl font-futurabook">
               <Link to="/guestform" className="text-decoration-none">
-                <button className="inline-block w-full h-16 text-center text-2xl bg-custom-black text-white">
+                <button
+                  className="inline-block w-full h-16 text-center text-2xl 
+                hover:text-custom-black 
+                hover:bg-custom-white 
+                bg-custom-black 
+                text-custom-white 
+                transition drop-shadow-md"
+                >
                   Checkout
                 </button>
               </Link>
