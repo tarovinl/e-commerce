@@ -40,7 +40,7 @@ function Cart() {
           {carts.length > 0 &&
             carts.map((c) => {
               return (
-                <div className="h-52 w-full">
+                <div className="h-52 w-full mb-20 md:mb-0">
                   <Col sm="12" lg="12" key={c.id}>
                     <CartItemCard item={c} />
                   </Col>

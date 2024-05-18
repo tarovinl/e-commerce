@@ -33,17 +33,19 @@ const TopNavbar = () => {
 
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-md">
-      <div className="container mx-auto px-6 py-2 flex items-center justify-between">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <NavLink
           to="/"
           className="text-xl font-bold text-gray-900 no-underline"
         >
           <img src="/kopalogo.png" alt="Kopa Logo" className="h-10" />
         </NavLink>
-        <div className="md:hidden">
+
+        {showSearchBar && <SearchBar initialQuery="" />}
+        <div className="md:hidden ">
           <button
             onClick={toggleMenu}
-            className="focus:outline-none focus:shadow-outline"
+            className="relative focus:outline-none  focus:shadow-outline "
           >
             <svg
               className="h-6 w-6 fill-current"
@@ -55,8 +57,7 @@ const TopNavbar = () => {
             </svg>
           </button>
         </div>
-        {showSearchBar && <SearchBar initialQuery="" />}
-        <div className="hidden md:flex items-center space-x-12">
+        <div className="hidden md:flex items-center  space-x-12">
           <NavLink
             to="/products"
             className={({ isActive }) =>
@@ -65,7 +66,7 @@ const TopNavbar = () => {
               }`
             }
           >
-            <p className="text-lg group relative w-max">
+            <p className="text-lg group relative mt-4 w-max">
               <span>Shop</span>
               <span
                 className={`absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black ${
@@ -85,7 +86,7 @@ const TopNavbar = () => {
               }`
             }
           >
-            <p className="text-lg group relative w-max">
+            <p className="text-lg mt-4 group relative w-max">
               <span>
                 Cart{" "}
                 {totalItems > 0 && (
@@ -109,19 +110,37 @@ const TopNavbar = () => {
         <div className="md:hidden bg-white shadow-lg mt-2">
           <NavLink
             to="/products"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block px-4 py-2 group text-custom-black hover:bg-gray-100 no-underline font-futurabook"
             onClick={() => setIsMenuOpen(false)}
           >
-            Shop
+            <p className="text-lg  relative mt-2 w-max">
+              <span>Shop</span>
+              <span
+                className={`absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black ${
+                  location.pathname === "/products"
+                    ? "w-full"
+                    : "group-hover:w-full"
+                }`}
+              ></span>
+            </p>
           </NavLink>
           <NavLink
             to="/cart"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            className="block px-4 py-2 group flex  text-custom-black hover:bg-gray-100 no-underline font-futurabook"
             onClick={() => setIsMenuOpen(false)}
           >
-            Cart
+            <p className="text-lg  relative mt-2 w-max">
+              <span>Cart</span>
+              <span
+                className={`absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black ${
+                  location.pathname === "/products"
+                    ? "w-full"
+                    : "group-hover:w-full"
+                }`}
+              ></span>
+            </p>
             {totalItems > 0 && (
-              <span className="ml-2 inline-block rounded-full bg-custom-black text-white text-xs px-1 py-1">
+              <span className="ml-2 mt-[13px] mb-[18px] px-1 inline-block rounded-full bg-custom-black text-white text-sm  md:px-1 md:py-1">
                 {totalItems}
               </span>
             )}

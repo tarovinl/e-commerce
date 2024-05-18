@@ -75,7 +75,7 @@ function GuestForm() {
             </div>
             <div className="flex justify-content">
               <button
-                class="w-full text-white text-center bg-black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-6 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                class="w-full text-white text-center bg-custom-black hover:bg-black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-6 "
                 type="submit"
               >
                 Continue order

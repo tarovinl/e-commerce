@@ -31,20 +31,20 @@ const SearchBar = ({ initialQuery }) => {
   return (
     <form className="flex-1 mx-4 " onSubmit={handleSearchSubmit}>
       <div className="relative">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchQuery}
-          onChange={handleSearchChange}
-          className="w-1/2 border-b-2 ml-48 border-gray-300 py-2 pl-12 focus:outline-none focus:border-gray-500"
-        />
         <svg
-          className="ml-48 absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
+          className="ml-16 lg:ml-48 absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
           <path d="M10 2a8 8 0 0 1 8 8c0 1.847-.63 3.553-1.688 4.906l5.346 5.346-1.414 1.414-5.346-5.346A7.938 7.938 0 0 1 10 18a8 8 0 1 1 0-16zm0 2a6 6 0 1 0 0 12A6 6 0 0 0 10 4z" />
         </svg>
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="w-1/2 border-b-2 ml-16 lg:ml-48  border-gray-300 py-2 pl-12 focus:outline-none focus:border-gray-500"
+        />
       </div>
     </form>
   );

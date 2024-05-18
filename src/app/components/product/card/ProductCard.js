@@ -11,7 +11,7 @@ function ProductCard({ product }) {
         <div className="bg-white max-w-sm mx-auto p-4 w-full relative group ">
           <div className="relative flex flex-wrap justify-around h-96">
             <img
-              className="w-full h-full object-contain mb-4 transition-transform duration-300 group-hover:scale-125"
+              className="w-full h-full object-contain mb-4 transition-transform duration-300 group-hover:scale-105"
               src={product.image}
               alt={product.title}
             />

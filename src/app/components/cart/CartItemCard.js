@@ -53,7 +53,7 @@ function CartItemCard({ item }) {
             <div className="flex flex-none">
               <Link
                 to={`/product/${product.id}`}
-                className="text-dark text-decoration-none fs-5 items-center w-full"
+                className="text-dark text-decoration-none fs-5  items-center w-full"
               >
                 {product.title ? product.title.slice(0, 170) : ""}
               </Link>
@@ -67,10 +67,10 @@ function CartItemCard({ item }) {
               </span>
             </div>
 
-            <div className="d-flex w-full justify-between mb-2">
+            <div className="d-flex w-full justify-between mb-2 mt-2">
               <div className="flex-grow">
                 <button
-                  className="px-2 py-1 mr-2 text-custom-black hover:text-white hover:bg-custom-black transition"
+                  className="px-2 py-2 mr-0 md:mr-2 text-custom-black hover:text-white hover:bg-custom-black transition"
                   onClick={decreaseItemQuantity}
                 >
                   <FiMinus />
@@ -79,7 +79,7 @@ function CartItemCard({ item }) {
                   {product.quantity}
                 </span>
                 <button
-                  className="px-2 py-1 ml-2 text-custom-black hover:text-white hover:bg-custom-black  transition"
+                  className="px-2 py-2 ml-0 md:ml-2 text-custom-black hover:text-white hover:bg-custom-black  transition"
                   onClick={increaseItemQuantity}
                 >
                   <FiPlus />
