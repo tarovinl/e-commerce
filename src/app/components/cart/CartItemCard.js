@@ -42,7 +42,7 @@ function CartItemCard({ item }) {
     return (content = (
       <div className="flex  font-futurabook ">
         <div className="w-full h-96 flex justify-between pt-4">
-          <div className="px-4 h-52 ">
+          <div className="px-4  h-52 ">
             <img
               src={product.image}
               alt={product.title}

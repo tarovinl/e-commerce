@@ -17,11 +17,11 @@ function AllProducts() {
     <Fragment>
       <TopNavbar />
       <div className="container mx-auto py-8">
-        <h4 className="text-lg mb-4">Products</h4>
+        <h4 className="text-lg mb-4 font-futurabook">Products</h4>
         {isLoading && <p>Loading...</p>}
         {error && <p className="text-red-500">{error}</p>}
         {!isLoading && !error && filteredProducts.length === 0 && (
-          <p className="text-red-500">No results found.</p>
+          <p className="text-custom-black font-futurabook">No results found.</p>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredProducts.map((p) => (
