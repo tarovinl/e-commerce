@@ -34,13 +34,13 @@ const TopNavbar = () => {
   };
 
   return (
-    <nav className="bg-white sticky top-0 z-50 drop-shadow-md">
-      <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+    <nav className="bg-white sticky top-0 z-50  shadow-md">
+      <div className="container mx-auto px-6 py-2 flex items-center justify-between">
         <NavLink
           to="/"
           className="text-xl font-bold text-gray-900 no-underline"
         >
-          <img src="/kopalogo.png" alt="Kopa Logo" className="h-12" />
+          <img src="/kopalogo.png" alt="Kopa Logo" className="h-10" />
         </NavLink>
         <div className="md:hidden">
           <button className="focus:outline-none focus:shadow-outline">
@@ -75,7 +75,7 @@ const TopNavbar = () => {
                 <span>
                   Cart{" "}
                   {totalItems > 0 && (
-                    <span class="inline-block rounded-full bg-custom-red text-white text-xs px-1 py-1">
+                    <span class="inline-block rounded-full bg-custom-black text-white text-xs px-1 py-1">
                       {totalItems}
                     </span>
                   )}

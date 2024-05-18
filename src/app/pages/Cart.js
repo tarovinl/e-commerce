@@ -75,8 +75,8 @@ function Cart() {
               <Link to="/guestform" className="text-decoration-none">
                 <button
                   className="inline-block w-full h-16 text-center text-2xl 
-                hover:text-custom-black 
-                hover:bg-custom-white 
+                
+                hover:bg-black
                 bg-custom-black 
                 text-custom-white 
                 transition drop-shadow-md"

@@ -70,7 +70,7 @@ function CartItemCard({ item }) {
             <div className="d-flex w-full justify-between mb-2">
               <div className="flex-grow">
                 <button
-                  className="px-2 py-1 mr-2 rounded hover:text-white hover:bg-gray-900 shadow-md transition"
+                  className="px-2 py-1 mr-2 text-custom-black hover:text-white hover:bg-custom-black transition"
                   onClick={decreaseItemQuantity}
                 >
                   <FiMinus />
@@ -79,7 +79,7 @@ function CartItemCard({ item }) {
                   {product.quantity}
                 </span>
                 <button
-                  className="px-2 py-1 ml-2 rounded hover:text-white hover:bg-gray-900 shadow-md transition"
+                  className="px-2 py-1 ml-2 text-custom-black hover:text-white hover:bg-custom-black  transition"
                   onClick={increaseItemQuantity}
                 >
                   <FiPlus />
@@ -88,13 +88,16 @@ function CartItemCard({ item }) {
             </div>
 
             <div className="w-full text-right ">
-              <span className="p-1 px-0 rounded-md hover:bg-custom-black hover:text-custom-white transition-colors">
+              <span className="">
                 <Button
                   variant=""
                   onClick={removeItem}
                   className="border-none focus:outline-none "
                 >
-                  Remove
+                  <p className="text-lg group relative w-max">
+                    <span>Remove</span>
+                    <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black group-hover:w-full"></span>
+                  </p>
                 </Button>
               </span>
             </div>
