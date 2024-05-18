@@ -45,7 +45,7 @@ const TopNavbar = () => {
         <div className="md:hidden ">
           <button
             onClick={toggleMenu}
-            className="relative focus:outline-none  focus:shadow-outline "
+            className="relative focus:outline-none focus:shadow-outline"
           >
             <svg
               className="h-6 w-6 fill-current"
@@ -57,7 +57,7 @@ const TopNavbar = () => {
             </svg>
           </button>
         </div>
-        <div className="hidden md:flex items-center  space-x-12">
+        <div className="hidden md:flex items-center space-x-12">
           <NavLink
             to="/products"
             className={({ isActive }) =>
@@ -106,14 +106,18 @@ const TopNavbar = () => {
           </NavLink>
         </div>
       </div>
-      {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg mt-2">
+      <div
+        className={`md:hidden overflow-hidden transition-max-height duration-500 ease-in-out ${
+          isMenuOpen ? "max-h-60" : "max-h-0"
+        }`}
+      >
+        <div className="bg-white mt-2">
           <NavLink
             to="/products"
             className="block px-4 py-2 group text-custom-black hover:bg-gray-100 no-underline font-futurabook"
             onClick={() => setIsMenuOpen(false)}
           >
-            <p className="text-lg  relative mt-2 w-max">
+            <p className="text-lg relative mt-2 w-max">
               <span>Shop</span>
               <span
                 className={`absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black ${
@@ -126,10 +130,10 @@ const TopNavbar = () => {
           </NavLink>
           <NavLink
             to="/cart"
-            className="flex px-4 py-2 group  text-custom-black hover:bg-gray-100 no-underline font-futurabook"
+            className="flex px-4 py-2 group text-custom-black hover:bg-gray-100 no-underline font-futurabook"
             onClick={() => setIsMenuOpen(false)}
           >
-            <p className="text-lg  relative mt-2 w-max">
+            <p className="text-lg relative mt-2 w-max">
               <span>Cart</span>
               <span
                 className={`absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black ${
@@ -140,13 +144,13 @@ const TopNavbar = () => {
               ></span>
             </p>
             {totalItems > 0 && (
-              <span className="ml-2 mt-[13px] mb-[18px] px-1 inline-block rounded-full bg-custom-black text-white text-sm  md:px-1 md:py-1">
+              <span className="ml-2 mt-[13px] mb-[18px] px-1 inline-block rounded-full bg-custom-black text-white text-sm md:px-1 md:py-1">
                 {totalItems}
               </span>
             )}
           </NavLink>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

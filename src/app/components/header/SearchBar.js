@@ -19,7 +19,7 @@ const SearchBar = ({ initialQuery }) => {
       dispatch(setSearchQuery(query));
       navigate("/products");
     }, 300),
-    []
+    [dispatch, navigate]
   );
 
   const handleSearchSubmit = (e) => {
@@ -29,10 +29,10 @@ const SearchBar = ({ initialQuery }) => {
   };
 
   return (
-    <form className="flex-1 mx-4 " onSubmit={handleSearchSubmit}>
+    <form className="flex-1 mx-4" onSubmit={handleSearchSubmit}>
       <div className="relative">
         <svg
-          className="ml-16 lg:ml-48 absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
+          className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -43,7 +43,7 @@ const SearchBar = ({ initialQuery }) => {
           placeholder="Search"
           value={searchQuery}
           onChange={handleSearchChange}
-          className="w-1/2 border-b-2 ml-16 lg:ml-48  border-gray-300 py-2 pl-12 focus:outline-none focus:border-gray-500"
+          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 border-b-2 border-gray-300 py-2 pl-12 focus:outline-none focus:border-gray-500"
         />
       </div>
     </form>
