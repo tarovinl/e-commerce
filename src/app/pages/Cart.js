@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItemCard from "../components/cart/CartItemCard";
@@ -17,15 +17,15 @@ function Cart() {
   let { carts } = useSelector(cartState);
   const subTotal = subTotalPrice(state);
   const tax = totalTax(state);
-  const totalAmmount = totalPrice(state);
+  const totalAmount = totalPrice(state);
 
   return (
     <Fragment>
       <TopNavbar />
-      <Container>
+      <div className="container ">
         <Row>
           {!carts.length && (
-            <div className="w-100 my-5 text-center ">
+            <div className="w-100 py-48 text-center ">
               <h3>
                 Your cart is lonely. Go for{" "}
                 <Link
@@ -40,44 +40,47 @@ function Cart() {
           {carts.length > 0 &&
             carts.map((c) => {
               return (
-                <Col sm="12" lg="12" key={c.id}>
-                  <CartItemCard item={c} />
-                </Col>
+                <div className="h-52 w-full">
+                  <Col sm="12" lg="12" key={c.id}>
+                    <CartItemCard item={c} />
+                  </Col>
+                </div>
               );
             })}
         </Row>
 
         {carts.length > 0 && (
-          <div className="my-3">
-            <Card>
-              <Card.Body>
-                <div className="d-flex justify-content-around ">
-                  <div className="w-100 align-middle">
-                    <h5 className="align-middle d-inline">
-                      Subtotal: ${subTotal}
-                    </h5>
-                  </div>
-                  <div className="w-100 ">
-                    <h5 className="align-middle d-inline">Tax(2%): ${tax}</h5>
-                  </div>
-                  <div className="w-100 align-middle">
-                    <h5 className="align-middle d-inline">
-                      Total Price: ${totalAmmount.toFixed(2)}
-                    </h5>
-                  </div>
-                  <div className="w-100 text-center">
-                    <Link to="/guestform" className="text-decoration-none">
-                      <Button variant="dark" className="align-middle d-inline">
-                        Checkout
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </Card.Body>
-            </Card>
+          <div className="my-6 border-t-2 border-[#a6a6a6]">
+            <div className="flex flex-col font-futurabook mt-2 space-y-0 ">
+              <div className="flex justify-between ">
+                <h5 className="text-lg">Subtotal</h5>
+                <h5 className="text-lg">${subTotal}</h5>
+              </div>
+              <div className="flex justify-between ">
+                <h5 className="text-lg">Tax (2%)</h5>
+                <h5 className="text-lg">${tax}</h5>
+              </div>
+              <div className="flex justify-between ">
+                <h5 className="text-lg">Shipping</h5>
+                <h5 className="text-lg">Free</h5>
+              </div>
+              <div className="flex  justify-between  mt-2 mb-4 ">
+                <h5 className="text-2xl font-bold">Total:</h5>
+                <h5 className="text-2xl font-bold">
+                  ${totalAmount.toFixed(2)}
+                </h5>
+              </div>
+            </div>
+            <div className="text-center text-2xl font-futurabook">
+              <Link to="/guestform" className="text-decoration-none">
+                <button className="inline-block w-full h-16 text-center text-2xl bg-custom-black text-white">
+                  Checkout
+                </button>
+              </Link>
+            </div>
           </div>
         )}
-      </Container>
+      </div>
       <Footer />
     </Fragment>
   );

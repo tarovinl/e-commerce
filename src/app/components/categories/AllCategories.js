@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import CategoryCard from "./CategoryCard";
 
@@ -7,19 +6,19 @@ const AllCategories = () => {
   const { categories } = useSelector((state) => state.categories);
 
   return (
-    <Container className="my-3 py-3">
-      <h3 className="text-center mb-4">Browse Categories</h3>
-      <Row>
+    <div className="container mx-auto my-3 py-3 px-4 font-futurabook">
+      <h3 className="text-center text-xl mb-4  ">Browse Categories</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {categories &&
           categories.map((c, index) => {
             return (
-              <Col xs={12} sm={6} md={3} className="mb-2 p-2" key={index}>
+              <div className="p-2 bg-white" key={index}>
                 <CategoryCard category={c} />
-              </Col>
+              </div>
             );
           })}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 
