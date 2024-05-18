@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import debounce from "lodash.debounce";
-import { setSearchQuery } from "../../features/product/ProductSlice";
+import { setSearchQuery } from "../../../features/product/ProductSlice";
 
 const SearchBar = ({ initialQuery }) => {
   const dispatch = useDispatch();
