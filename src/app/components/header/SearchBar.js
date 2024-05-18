@@ -29,8 +29,11 @@ const SearchBar = ({ initialQuery }) => {
   };
 
   return (
-    <form className="flex-1 mx-4" onSubmit={handleSearchSubmit}>
-      <div className="relative">
+    <form
+      className="flex justify-center flex-1 mx-4"
+      onSubmit={handleSearchSubmit}
+    >
+      <div className="relative w-full max-w-md">
         <svg
           className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +46,7 @@ const SearchBar = ({ initialQuery }) => {
           placeholder="Search"
           value={searchQuery}
           onChange={handleSearchChange}
-          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 border-b-2 border-gray-300 py-2 pl-12 focus:outline-none focus:border-gray-500"
+          className="w-full border-b-2 border-gray-300 py-2 pl-10 focus:outline-none focus:border-gray-500"
         />
       </div>
     </form>
