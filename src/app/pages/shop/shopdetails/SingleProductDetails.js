@@ -52,7 +52,7 @@ function SingleProductDetails() {
       <TopNavbar />
       <div className="font-futurabook container mx-auto px-4 py-8">
         {isItemAdded && ( // Show the message when item is added
-          <div className="bg-green-200 text-green-800 px-4 py-2 mb-4">
+          <div className="bg-custom-black text-white px-4 py-2 mb-4">
             {product.title} is added to your cart
           </div>
         )}

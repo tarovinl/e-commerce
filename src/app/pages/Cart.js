@@ -25,12 +25,12 @@ function Cart() {
       <div className="container ">
         <Row>
           {!carts.length && (
-            <div className="w-100 py-48 text-center ">
+            <div className="w-100 py-48 text-center font-futurabook ">
               <h3>
                 Your cart is lonely. Go for{" "}
                 <Link
                   to="/products"
-                  className="text-danger text-decoration-none"
+                  className="font-bold text-black text-decoration-none"
                 >
                   shopping!{" "}
                 </Link>
