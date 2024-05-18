@@ -103,7 +103,7 @@ function SingleProductDetails() {
               </div>
               <div className="flex">
                 <button
-                  className="text-xl group bg-custom-black text-white px-4 py-2 flex items-center justify-between mb-4"
+                  className="text-xl group hover:bg-black transition-colors duration-200 bg-custom-black text-white px-4 py-2 flex items-center justify-between mb-4"
                   onClick={addToCart}
                 >
                   <svg
@@ -120,10 +120,7 @@ function SingleProductDetails() {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                     />
                   </svg>
-                  <p class="text-lg m-2  relative w-max">
-                    <span>Add to Cart</span>
-                    <span class="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-white group-hover:w-full"></span>
-                  </p>
+                  Add to Cart
                   <h4 className="text-white text-xl ml-28 mt-2">
                     ${product.price}
                   </h4>
