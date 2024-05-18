@@ -75,7 +75,9 @@ const TopNavbar = () => {
                 <span>
                   Cart{" "}
                   {totalItems > 0 && (
-                    <span style={{ color: "red" }}>({totalItems})</span>
+                    <span class="inline-block rounded-full bg-custom-black text-white text-xs px-1 py-1">
+                      {totalItems}
+                    </span>
                   )}
                 </span>
                 <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black group-hover:w-full"></span>
