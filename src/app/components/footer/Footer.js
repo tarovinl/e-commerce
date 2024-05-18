@@ -6,10 +6,9 @@ function Footer() {
       <div>
         <div className="h-0.5 w-full bg-[#a6a6a6]" />
         <div className="mt-auto flex flex-col items-start justify-between gap-2 bg-cs-cream px-4 py-6 md:flex-row md:px-[7%] md:py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-52 font-futurabook ml-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-52 font-futurabook ml-8 md:ml-14">
             <div className="mb-0 flex w-full flex-col items-start md:mb-0 ">
               <span className="text-sm mb-4">Customer Service</span>
-
               <span className="text-sm mb-2 text-gray-500">Contact us</span>
               <span className="text-sm mb-2 text-gray-500">Shipping</span>
               <span className="text-sm mb-2 text-gray-500">Tax</span>
@@ -20,7 +19,6 @@ function Footer() {
                 Track Your Order
               </span>
               <span className="text-sm mb-2 text-gray-500">Cancel Order</span>
-
               <span className="text-sm mb-2 text-gray-500">
                 Certificate of Authenticity
               </span>
@@ -35,9 +33,9 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className=" border-t-2 border-[#a6a6a6] flex justify-between  px-20 py-4 font-futurabook ">
-          <h1 className=" text-sm  ">© KÖPA 2024 </h1>
-          <h1 className="text-sm  ">All Rights Reserved. CICS Co. Ltd. </h1>
+        <div className="border-t-2 border-[#a6a6a6] flex justify-between px-20 py-4 font-futurabook">
+          <h1 className="text-sm">© KÖPA 2024</h1>
+          <h1 className="text-sm">All Rights Reserved. CICS Co. Ltd.</h1>
         </div>
       </div>
     </Fragment>
