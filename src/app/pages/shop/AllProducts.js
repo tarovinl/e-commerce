@@ -20,7 +20,7 @@ function AllProducts() {
     <Fragment>
       <TopNavbar />
       <div className="container mx-auto py-8">
-        <h4 className="text-lg mb-4 font-futurabook">Products</h4>
+        <h4 className="text-lg mb-4 font-futurabook font-bold">Products</h4>
         <Sort
           products={filteredProducts}
           sortOption={sortOption}

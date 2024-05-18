@@ -7,7 +7,7 @@ function LatestProducts() {
   const { products } = useSelector((state) => state.products);
   return (
     <Container className="my-3 py-3">
-      <h3 className="text-center mb-4 font-futurabook text-xl">
+      <h3 className="text-center mb-4 font-futurabook text-xl font-bold">
         Latest Products
       </h3>
       <Row>

@@ -4,7 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCategories } from "../../features/category/CategorySlice";
 import { setSearchQuery } from "../../features/product/ProductSlice";
 import { totalCartItem } from "../../features/cart/CartSelector";
-import SearchBar from "./SearchBar";
+import Logo from "./elements/Logo";
+import Menu from "./elements/Menu";
+import Shop from "./elements/Shop";
+import Cart from "./elements/Cart";
+import SearchBar from "./elements/SearchBar";
 
 const TopNavbar = () => {
   const dispatch = useDispatch();
@@ -34,76 +38,12 @@ const TopNavbar = () => {
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <NavLink
-          to="/"
-          className="text-xl font-bold text-gray-900 no-underline"
-        >
-          <img src="/kopalogo.png" alt="Kopa Logo" className="h-10" />
-        </NavLink>
-
+        <Logo />
         {showSearchBar && <SearchBar initialQuery="" />}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="relative focus:outline-none focus:shadow-outline hover:bg-gray-200 p-2 rounded"
-          >
-            <svg
-              className="h-6 w-6 fill-current text-gray-700 hover:text-gray-900 transition-colors duration-200"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
+        <Menu toggleMenu={toggleMenu} />
         <div className="hidden md:flex items-center space-x-12">
-          <NavLink
-            to="/products"
-            className={({ isActive }) =>
-              `text-gray-700 hover:text-black no-underline font-futurabook ${
-                isActive ? "underline" : ""
-              }`
-            }
-          >
-            <p className="text-lg group relative mt-4 w-max">
-              <span>Shop</span>
-              <span
-                className={`absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black ${
-                  location.pathname === "/products"
-                    ? "w-full"
-                    : "group-hover:w-full"
-                }`}
-              ></span>
-            </p>
-          </NavLink>
-
-          <NavLink
-            to="/cart"
-            className={({ isActive }) =>
-              `text-gray-700 hover:text-black no-underline font-futurabook ${
-                isActive ? "underline" : ""
-              }`
-            }
-          >
-            <p className="text-lg mt-4 group relative w-max">
-              <span>
-                Cart{" "}
-                {totalItems > 0 && (
-                  <span className="inline-block rounded-full bg-custom-black text-white text-xs px-1 py-1">
-                    {totalItems}
-                  </span>
-                )}
-              </span>
-              <span
-                className={`absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black ${
-                  location.pathname === "/cart"
-                    ? "w-full"
-                    : "group-hover:w-full"
-                }`}
-              ></span>
-            </p>
-          </NavLink>
+          <Shop location={location} />
+          <Cart totalItems={totalItems} location={location} />
         </div>
       </div>
       <div
