@@ -99,21 +99,30 @@ const TopNavbar = () => {
           </form>
         )}
         <div className="hidden md:block">
-          <div className="space-x-12">
+          <div className="space-x-12 flex">
             <NavLink
               to="/products"
-              className="text-gray-700 hover:text-gray-900 no-underline font-futurabook"
+              className="text-gray-700 hover:white no-underline font-futurabook "
             >
-              Shop
+              <p class="text-lg m-6 group relative w-max">
+                <span>Shop</span>
+                <span class="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black group-hover:w-full"></span>
+              </p>
             </NavLink>
+
             <NavLink
               to="/cart"
               className="text-gray-700 hover:text-gray-900 no-underline font-futurabook"
             >
-              Cart{" "}
-              {totalItems > 0 && (
-                <span style={{ color: "red" }}>({totalItems})</span>
-              )}
+              <p class="text-lg m-6 group relative w-max">
+                <span>
+                  Cart{" "}
+                  {totalItems > 0 && (
+                    <span style={{ color: "red" }}>({totalItems})</span>
+                  )}
+                </span>
+                <span class="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black group-hover:w-full"></span>
+              </p>
             </NavLink>
           </div>
         </div>
