@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import TopNavbar from "../../components/header/TopNavbar";
-import HomepageIntroScene from "../../components/homepageintro/HomepageIntroScene";
+import HomepageIntroScene from "./HomepageIntroScene";
 import AllCategories from "../../components/categories/AllCategories";
 import LatestProducts from "../../components/product/LatestProducts";
 import Footer from "../../components/footer/Footer";
