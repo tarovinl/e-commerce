@@ -22,7 +22,7 @@ function Cart() {
   return (
     <Fragment>
       <TopNavbar />
-      <Container>
+      <div className="container ">
         <Row>
           {!carts.length && (
             <div className="w-100 py-48 text-center ">
@@ -40,15 +40,17 @@ function Cart() {
           {carts.length > 0 &&
             carts.map((c) => {
               return (
-                <Col sm="12" lg="12" key={c.id}>
-                  <CartItemCard item={c} />
-                </Col>
+                <div className="h-52 w-full">
+                  <Col sm="12" lg="12" key={c.id}>
+                    <CartItemCard item={c} />
+                  </Col>
+                </div>
               );
             })}
         </Row>
 
         {carts.length > 0 && (
-          <div className="my-3 border-t-2 border-[#a6a6a6]">
+          <div className="my-6 border-t-2 border-[#a6a6a6]">
             <div className="flex flex-col font-futurabook mt-2 space-y-0 ">
               <div className="flex justify-between ">
                 <h5 className="text-lg">Subtotal</h5>
@@ -78,7 +80,7 @@ function Cart() {
             </div>
           </div>
         )}
-      </Container>
+      </div>
       <Footer />
     </Fragment>
   );

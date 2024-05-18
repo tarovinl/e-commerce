@@ -40,60 +40,62 @@ function CartItemCard({ item }) {
   let content = "";
   if (product) {
     return (content = (
-      <div className="d-flex justify-content-between font-futurabook">
-        <div className="w-100 flex justify-between ">
-          <div className="p-3">
+      <div className="flex  font-futurabook ">
+        <div className="w-full h-96 flex justify-between pt-4">
+          <div className="px-4 h-52 ">
             <img
               src={product.image}
               alt={product.title}
-              className="w-3/4 h-full  rounded-lg"
+              className="object-contain w-full h-full rounded-lg"
             />
           </div>
-          <div className="">
-            <div className="flex justify-between ">
+          <div className="w-full h-48 flex-col justify-between grid grid-cols-2 ">
+            <div className="flex">
               <Link
                 to={`/product/${product.id}`}
-                className="text-dark text-decoration-none fs-5"
+                className="text-dark text-decoration-none fs-5 items-center w-full"
               >
                 {product.title ? product.title.slice(0, 170) : ""}
               </Link>
+            </div>
+            <div className="flex text-right">
+              <span className="fs-5 w-full">
+                $
+                {product.price
+                  ? (product.price * product.quantity).toFixed(2)
+                  : ""}
+              </span>
+            </div>
 
-              <div className="w-100 text-center">
-                <span className="fs-5">
-                  $
-                  {product.price
-                    ? (product.price * product.quantity).toFixed(2)
-                    : ""}
+            <div className="d-flex w-full justify-between mb-2">
+              <div className="flex-grow">
+                <button
+                  className="text-black px-2 py-1 mr-2"
+                  onClick={decreaseItemQuantity}
+                >
+                  <FaMinus />
+                </button>
+                <span className="text-center w-16 p-1 m-0">
+                  {product.quantity}
                 </span>
+                <button
+                  className="text-black px-2 py-1 ml-2 rounded"
+                  onClick={increaseItemQuantity}
+                >
+                  <FaPlus />
+                </button>
               </div>
             </div>
-          </div>
-          <div className="d-flex w-100 h-8 justify-content-center">
-            <button
-              className=" text-black px-2 py-1 mr-2 "
-              onClick={decreaseItemQuantity}
-            >
-              <FaMinus />
-            </button>
-            <span className="text-center w-16 p-1 m-0 ">
-              {product.quantity}
-            </span>
-            <button
-              className="text-black px-2 py-1 ml-2 rounded "
-              onClick={increaseItemQuantity}
-            >
-              <FaPlus />
-            </button>
-          </div>
 
-          <div className="w-100 text-center">
-            <Button
-              variant=""
-              onClick={removeItem}
-              className="bg-transparent text-black"
-            >
-              Remove
-            </Button>
+            <div className="w-full text-right">
+              <Button
+                variant=""
+                onClick={removeItem}
+                className="border-none focus:outline-none text-black"
+              >
+                Remove
+              </Button>
+            </div>
           </div>
         </div>
       </div>
