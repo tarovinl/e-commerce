@@ -34,7 +34,7 @@ const TopNavbar = () => {
   };
 
   return (
-    <nav className="bg-white sticky top-0 z-50">
+    <nav className="bg-white sticky top-0 z-50 drop-shadow-md">
       <div className="container mx-auto px-6 py-3 flex items-center justify-between">
         <NavLink
           to="/"

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { FiMinus, FiPlus } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -42,15 +43,15 @@ function CartItemCard({ item }) {
     return (content = (
       <div className="flex  font-futurabook ">
         <div className="w-full h-96 flex justify-between pt-4">
-          <div className="px-4  h-52 ">
+          <div className="flex flex-none px-4  h-52 ">
             <img
               src={product.image}
               alt={product.title}
-              className="object-contain w-full h-full rounded-lg"
+              className="object-contain w-48 h-48 rounded-lg"
             />
           </div>
-          <div className="w-full h-48 flex-col justify-between grid grid-cols-2 ">
-            <div className="flex">
+          <div className="w-full h-48 flex-col justify-between grid grid-cols-2">
+            <div className="flex flex-none">
               <Link
                 to={`/product/${product.id}`}
                 className="text-dark text-decoration-none fs-5 items-center w-full"
@@ -70,31 +71,33 @@ function CartItemCard({ item }) {
             <div className="d-flex w-full justify-between mb-2">
               <div className="flex-grow">
                 <button
-                  className="text-black px-2 py-1 mr-2"
+                  className="px-2 py-1 mr-2 rounded hover:text-white hover:bg-gray-900 shadow-md transition"
                   onClick={decreaseItemQuantity}
                 >
-                  <FaMinus />
+                  <FiMinus />
                 </button>
                 <span className="text-center w-16 p-1 m-0">
                   {product.quantity}
                 </span>
                 <button
-                  className="text-black px-2 py-1 ml-2 rounded"
+                  className="px-2 py-1 ml-2 rounded hover:text-white hover:bg-gray-900 shadow-md transition"
                   onClick={increaseItemQuantity}
                 >
-                  <FaPlus />
+                  <FiPlus />
                 </button>
               </div>
             </div>
 
-            <div className="w-full text-right">
-              <Button
-                variant=""
-                onClick={removeItem}
-                className="border-none focus:outline-none text-black"
-              >
-                Remove
-              </Button>
+            <div className="w-full text-right ">
+              <span className="p-1 px-0 rounded-md hover:bg-custom-black hover:text-custom-white transition-colors">
+                <Button
+                  variant=""
+                  onClick={removeItem}
+                  className="border-none focus:outline-none "
+                >
+                  Remove
+                </Button>
+              </span>
             </div>
           </div>
         </div>
