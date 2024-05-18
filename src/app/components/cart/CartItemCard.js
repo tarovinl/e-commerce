@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -9,6 +8,7 @@ import {
   decreaseQuantity,
   removeFormCart,
 } from "../../features/cart/CartSlice";
+import { Button } from "react-bootstrap";
 
 function CartItemCard({ item }) {
   //set the product info to state
