@@ -20,17 +20,27 @@ function Cart() {
   const totalAmount = totalPrice(state);
 
   if (!carts) {
-    return (<div className="w-100 py-48 text-center font-futurabook ">
-    <h3>
-      Your cart is lonely. Go for{" "}
-      <Link
-        to="/products"
-        className="font-bold text-black text-decoration-none"
-      >
-        shopping!{" "}
-      </Link>
-    </h3>
-  </div>);
+    return (<Fragment>
+      <TopNavbar />
+      <div className="container ">
+        <Row>
+            <div className="w-100 py-48 text-center font-futurabook ">
+              <h3>
+                Your cart is lonely. Go for{" "}
+                <Link
+                
+                  to="/products"
+                  className="font-bold text-black text-decoration-none"
+                >
+                  shopping!{" "}
+                </Link>
+              </h3>
+            </div>
+          
+        </Row>
+      </div>
+      <Footer />
+    </Fragment>);
   }
 
   return (
