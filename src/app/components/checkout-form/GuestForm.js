@@ -3,6 +3,7 @@ import TopNavbar from "../header/TopNavbar";
 import { Link } from "react-router-dom";
 import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
 
 function GuestForm() {
   const navigate = useNavigate();
@@ -31,14 +32,16 @@ function GuestForm() {
   return (
     <Fragment>
       <TopNavbar />
-      <div className="h-auto w-2/3 flex flex-col mt-16 mx-auto items-center lg:w-1/3">
-        <h3 class="text-gray-700 text-2xl w-full md:text-3xl lg:text-4xl">Continue as guest</h3>
+      <div className="font-futurabook h-auto w-2/3 flex flex-col mt-16 mb-16 mx-auto items-center lg:w-1/3">
+        <h3 class="text-gray-700 text-2xl w-full md:text-3xl lg:text-4xl font-">
+          Continue as guest
+        </h3>
 
         <p class=" text-gray-700 text-base lg:text-lg mt-12">
           Complete your order without an account. You can save your details on
           the next step to make your future purchases even faster.
         </p>
-        <div className="w-full my-6" >
+        <div className="w-full my-6">
           <form onSubmit={handleSubmit}>
             <input
               class="w-full border-2 border-black rounded-lg px-3 py-3 my-3 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -48,7 +51,11 @@ function GuestForm() {
             />
 
             <div className="flex justify-center">
-              <input type="checkbox" className="mr-3 px-3" onChange={handleAgreementChange} />
+              <input
+                type="checkbox"
+                className="mr-3 px-3"
+                onChange={handleAgreementChange}
+              />
               <label class="text-gray-700">
                 I have read and agree to{" "}
                 <a
@@ -77,14 +84,18 @@ function GuestForm() {
           </form>
         </div>
       </div>
-      <Modal show={showTermsModal} onHide={handleCloseTermsModal}>
+      <Modal
+        show={showTermsModal}
+        onHide={handleCloseTermsModal}
+        className="font-futurabook"
+      >
         <Modal.Header closeButton>
-          <Modal.Title>Kopa Terms of Service</Modal.Title>
+          <Modal.Title>Köpa Terms of Service</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>
-            These Terms of Service govern your access to and use of the Kopa
-            website and the services offered by Kopa. By accessing or using the
+            These Terms of Service govern your access to and use of the Köpa
+            website and the services offered by Köpa. By accessing or using the
             Service, you agree to be bound by these Terms.
           </p>
           <h6>1. Acceptance of Terms</h6>
@@ -101,30 +112,30 @@ function GuestForm() {
           <p>
             When you place an order through the Service, you agree to pay the
             full amount for the order, including any applicable taxes and
-            shipping fees. Kopa reserves the right to cancel any order at any
+            shipping fees. Köpa reserves the right to cancel any order at any
             time for any reason. We accept various payment methods as specified
             on the Website. You represent and warrant that you have the right to
             use any payment method you select during checkout.
           </p>
           <h6>3. Products and Availability</h6>
           <p>
-            Kopa strives to provide accurate information on the Website,
+            Köpa strives to provide accurate information on the Website,
             including product descriptions and pricing. However, there may be
-            occasional errors or inaccuracies. Kopa reserves the right to
+            occasional errors or inaccuracies. Köpa reserves the right to
             correct any errors or inaccuracies and to change or update
             information at any time without prior notice including after you
             have submitted your order.
           </p>
           <h6>4. Shipping</h6>
           <p>
-            Kopa will ship your order to the address you specify during
+            Köpa will ship your order to the address you specify during
             checkout. Shipping times and costs are as specified on the Website.
-            Kopa is not responsible for delays in shipping caused by factors
+            Köpa is not responsible for delays in shipping caused by factors
             beyond our control..
           </p>
           <h6>5. Returns and Refunds</h6>
           <p>
-            Kopa offers a return and refund policy as specified on the Website.
+            Köpa offers a return and refund policy as specified on the Website.
             You are responsible for returning unwanted items in their original
             condition and packaging.
           </p>
@@ -132,13 +143,17 @@ function GuestForm() {
         <Modal.Footer></Modal.Footer>
       </Modal>
 
-      <Modal show={showPrivacyModal} onHide={handleClosePrivacyModal}>
+      <Modal
+        show={showPrivacyModal}
+        onHide={handleClosePrivacyModal}
+        className="font-futurabook"
+      >
         <Modal.Header closeButton>
-          <Modal.Title>Kopa Privacy Policy</Modal.Title>
+          <Modal.Title>Köpa Privacy Policy</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>
-            This Privacy Policy describes how Kopa collects, uses, and discloses
+            This Privacy Policy describes how Köpa collects, uses, and discloses
             your personal information when you visit our website and use the
             services we offer.
           </p>
@@ -201,6 +216,7 @@ function GuestForm() {
         </Modal.Body>
         <Modal.Footer></Modal.Footer>
       </Modal>
+      <Footer />
     </Fragment>
   );
 }

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../features/cart/CartSlice";
 import { useRef } from "react";
+import Footer from "../../components/footer/Footer";
+import TopNavbar from "../../components/header/TopNavbar";
 
 import emailjs from "@emailjs/browser";
 
@@ -43,7 +45,8 @@ function CompleteForm() {
 
   return (
     <Fragment>
-      <div className="h-full w-2/3 justify-center items-center flex flex-col mx-auto my-auto px-3 py-3 lg:w-1/2">
+      <TopNavbar />
+      <div className="font-futurabook h-full w-2/3 justify-center items-center flex flex-col mx-auto my-auto px-3 py-3 lg:w-1/2">
         <div className="flex flex-col justify-center text-center">
           <p className="text-slate-400">
             For customs purposes, you must enter the following details in latin
@@ -150,17 +153,26 @@ function CompleteForm() {
               //onChange = {}
               required
             />
-            <button type="submit" className="w-full text-white text-center bg-black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Continue order</button>
+            <button
+              type="submit"
+              className="w-full text-white text-center bg-black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+            >
+              Continue order
+            </button>
           </form>
         </div>
       </div>
 
-      <Modal show={showModal} onHide={handleCloseModal}>
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        className="font-futurabook"
+      >
         <Modal.Header closeButton>
           <Modal.Title>Order Confirmation</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h5 className="text-justify">
+          <h5 className="text-left text-lg ">
             Thanks for your order! We've received it and sent a notification
             email to our admin team for confirmation. You'll receive a separate
             email confirmation once your order is reviewed and approved. This
@@ -170,12 +182,17 @@ function CompleteForm() {
         </Modal.Body>
         <Modal.Footer>
           <Link to="/">
-            <Button variant="secondary" onClick={handleGoToHomepage}>
+            <Button
+              variant="secondary"
+              onClick={handleGoToHomepage}
+              className=""
+            >
               Go to Homepage
             </Button>
           </Link>
         </Modal.Footer>
       </Modal>
+      <Footer />
     </Fragment>
   );
 }
