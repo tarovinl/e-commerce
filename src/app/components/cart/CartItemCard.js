@@ -93,7 +93,10 @@ function CartItemCard({ item }) {
                 onClick={removeItem}
                 className="border-none focus:outline-none text-black"
               >
-                Remove
+                <p className="text-lg  group relative w-max">
+                  <span>Remove</span>
+                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-custom-black group-hover:w-full"></span>
+                </p>
               </Button>
             </div>
           </div>
