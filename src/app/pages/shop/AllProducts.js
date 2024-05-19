@@ -20,13 +20,15 @@ function AllProducts() {
     <Fragment>
       <TopNavbar />
       <div className="container mx-auto py-8">
-        <h4 className="text-lg mb-4 font-futurabook font-bold">Products</h4>
-        <Sort
-          products={filteredProducts}
-          sortOption={sortOption}
-          setSortOption={setSortOption}
-          setSortedProducts={setSortedProducts}
-        />
+        <div className="flex justify-between font-futurabook">
+          <h4 className="text-lg mb-4  font-bold">Products</h4>
+          <Sort
+            products={filteredProducts}
+            sortOption={sortOption}
+            setSortOption={setSortOption}
+            setSortedProducts={setSortedProducts}
+          />
+        </div>
         {isLoading && <p>Loading...</p>}
         {error && <p className="text-red-500">{error}</p>}
         {!isLoading && !error && filteredProducts.length === 0 && (
