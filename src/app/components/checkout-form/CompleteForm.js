@@ -1,6 +1,4 @@
 import React, { Fragment, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../features/cart/CartSlice";
 import { useRef } from "react";

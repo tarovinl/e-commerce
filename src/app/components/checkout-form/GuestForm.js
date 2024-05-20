@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import TopNavbar from "../header/TopNavbar";
-import { Modal } from "react-bootstrap";
 
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
