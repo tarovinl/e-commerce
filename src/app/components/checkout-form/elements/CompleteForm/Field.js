@@ -112,26 +112,6 @@ export default function Field({
         <input
           className={inputClass}
           type="text"
-          id="address-2"
-          placeholder="Address line 2 (Optional)"
-          name="from_address-2"
-          onChange={handleFieldChange}
-          aria-describedby={
-            errorMessages.from_address_2 ? "address-2-error" : ""
-          }
-        />
-        {errorMessages.from_address_2 && (
-          <span
-            id="address-2-error"
-            className=" text-red-500 text-sm text-start block mb-2 -mt-4"
-          >
-            {errorMessages.from_address_2}
-          </span>
-        )}
-
-        <input
-          className={inputClass}
-          type="text"
           id="post-code"
           placeholder="Post code*"
           name="from_post_code"
